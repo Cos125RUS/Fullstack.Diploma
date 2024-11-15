@@ -1,0 +1,122 @@
+.product {
+    &-top {
+        padding-left: calc(100% / 2 - 559px);
+        padding-right: calc(100%/2 - 559px);
+
+        &__left {
+            margin-left: 67px;
+            margin-right: 14px;
+
+            &-img {
+                max-height: 77px;
+            }
+        }
+
+        &__right {
+            width: 100%;
+        }
+
+        &__catalog {
+            display: none;
+        }
+    }
+
+    &-main {
+        @extend %flex-center;
+
+        &__box {
+            background: $whiteColor;
+            border: 0;
+            border-radius: 28px;
+            box-sizing: border-box;
+            min-width: 1117px;
+            margin-top: 28px;
+            padding-top: 63px;
+            @extend %flex-column-center;
+        }
+
+        &__top {
+            display: none;
+        }
+
+        &__options {
+            min-width: 975px;
+            border-bottom: 1.5px solid $grayColor;
+            padding-left: 27px;
+
+            & img {
+                height: 207px;
+                width: 292px;
+            }
+
+            &-selectors {
+                min-height: 162px;
+                justify-content: space-between;
+            }
+
+            &-counts {
+                min-height: 162px;
+
+                &-box {
+                    margin-bottom: 20px;
+                }
+            }
+
+            &-total {
+                margin-bottom: 17px;
+            }
+
+            &-button {
+                min-width: 194px;
+                min-height: 48px;
+            }
+        }
+
+        &__info {
+            margin: 53px 112px 107px 99px;
+            display: flex;
+            gap: 63px;
+        }
+
+        &__description {
+            max-width: 424px;
+            
+            &-title {
+                @include font(14px, 700);
+                padding-bottom: 40px;
+            }
+
+            &-text {
+                @include font(14px, 400);
+                text-align: justify;
+                line-height: 150%;
+            }
+        }
+
+        &__specifications {
+            min-width: 424px;
+
+            &-box {
+                @extend %flex-sb-center;
+
+                &:first-child {
+                    padding-bottom: 17px;
+                }
+                
+                &:not(:first-child) {
+                    border-bottom: 1px solid $grayColor;
+                    min-height: 65px;
+                }
+            }
+
+            &-title {
+                @include font(14px, 700);
+                text-transform: uppercase;
+            }
+
+            &-value {
+                @include font(14px, 400);
+            }
+        }
+    }
+}

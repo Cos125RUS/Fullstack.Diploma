@@ -1,0 +1,52 @@
+.sales{
+    &-main {
+        margin-top: 17px;
+        @extend %flex-column-center;
+        gap: 17px;
+    }
+
+    &-section {
+        max-width: 1117px;
+        @extend %flex-sb;
+        box-sizing: border-box;
+        border-radius: 28px;
+        gap: 107px;
+        background-color: $whiteColor;
+
+        &__content {
+            padding-top: 26px;
+            padding-right: 45px;
+            
+            &-title {
+                padding-bottom: 10px;
+                text-transform: uppercase;
+                @include font(18px, 500);
+                color: $blueColor;
+            }
+
+            &-text {
+                @include font(14px, 400);
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .sales {
+        &-main {
+            margin-bottom: 20px;
+        }
+
+        &-section {
+            flex-direction: column;
+            max-width: 285px;
+            border-radius: 35px;
+            gap: 0;
+
+            &__content {
+                text-align: center;
+                padding: 26px 5px;
+            }
+        }
+    }
+}

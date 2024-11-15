@@ -1,0 +1,312 @@
+@media (max-width: 1024px) {
+    .header {
+        min-height: 143px;
+        z-index: 5;
+
+        &__info,
+        &__sections {
+            display: none;
+        }
+
+        &__top {
+            max-width: 356px;
+            display: flex;
+            justify-content: center;
+
+            &-nav {
+                max-width: 290px;
+                padding-top: 21px;
+                display: grid;
+                justify-content: space-between;
+                gap: 30px 0;
+                grid-template-areas:
+                    "logo logo cart nav"
+                    "ui ui ui ui";
+                grid-template-rows: 40px 28px;
+                grid-template-columns: 146px 11px 37px 30px;
+            }
+        }
+
+        &__logo {
+            grid-area: logo;
+            max-height: 40px;
+        }
+
+        &__cart {
+            grid-area: cart;
+
+            &-background {
+                height: 59px;
+                width: 37px;
+                top: -24px;
+            }
+
+            &-icon {
+                width: 18px;
+                height: 18px;
+                margin-bottom: 6px;
+            }
+
+            &::after {
+                min-width: 22px;
+                min-height: 22px;
+                font-size: 11px;
+                top: -17px;
+                left: 10px;
+
+            }
+        }
+
+        &__user-interface {
+            grid-area: ui;
+        }
+
+        &__menu {
+            display: inline;
+
+            &-label {
+                & svg {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        &__icons {
+            justify-content: center;
+        }
+
+        &-menu {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            position: absolute;
+            white-space: nowrap;
+            background-color: $turquoiseWithoutOpacityColor;
+            padding: 20px 24px;
+            position: fixed;
+            overflow-y: hidden;
+    
+            &__container {
+                display: flex;
+                justify-content: center;
+            }
+    
+            &__box {
+                width: 360px;
+            }
+    
+            &__top {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 42px;
+            }
+    
+            &__animation {
+                position: relative;
+                max-width: 62px;
+                max-height: 59px;
+                padding-top: 31px;
+    
+                & svg {
+                    &:last-child {
+                        width: 62px;
+                        height: 59px;
+                    }
+    
+                    &:first-child {
+                        width: 35px;
+                        height: 33px;
+                    }
+                }
+            }
+    
+            &__cross label {
+                font-size: 0;
+            }
+    
+            &__bottom {
+                padding-left: 103px;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            &__options {
+                display: flex;
+                flex-direction: column;
+                gap: 19px;
+                margin-bottom: 32px;
+    
+                &-link {
+                    @include font(18px, 700);
+                    color: $whiteColor;
+                }
+            }
+    
+            &__info {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                margin-bottom: 44px;
+    
+                &-link {
+                    @include font(16px, 400);
+                    color: $whiteColor;
+                }
+            }
+    
+            &__phone {
+                &-box {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    @include font(14px, 400);
+                    color: $whiteColor;
+                    margin-bottom: 72px;
+                }
+    
+                @include font(18px, 500);
+                color: $whiteColor;
+            }
+    
+            &__contacts {
+                display: flex;
+                flex-direction: column;
+                gap: 17px;
+    
+                &-link {
+                    @include font(14px, 700);
+                    color: $darkblueColor;
+                    display: flex;
+                    gap: 19px;
+    
+                    &>svg>path {
+                        fill: $whiteColor;
+                    }
+                }
+            }
+        }
+    }
+
+    .index-header {
+        max-height: 361px;
+        border-bottom: 0;
+    }
+
+    .logo__link>img {
+        height: 40px;
+        width: 146px;
+    }
+
+    .banner {
+        padding-top: 28px;
+
+        &__info {
+            gap: 18px;
+            margin-bottom: 16px;
+        }
+
+        &__left {
+            min-height: 162px;
+            min-width: 162px;
+            background-image: url('../img/header/banner_small.png');
+        }
+
+        &__picture {
+            display: none;
+        }
+
+        &__title {
+            max-width: 100px;
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 19px;
+            text-align: right;
+
+            &-name {
+                font-size: 18px;
+            }
+        }
+
+        &__description {
+            display: none;
+        }
+
+        &__right {
+            min-width: 0;
+            min-height: 162px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            & > * {
+                min-width: 0;
+            }
+
+            &-bottom {
+                flex-direction: column;
+                gap: 28px;
+                margin-bottom: 6px;
+            }
+        }
+
+        &__price {
+            &-box {
+                flex-direction: column;
+                padding-right: 0;
+            }
+
+            &-new {
+                font-size: 14px;
+            }
+
+            &-old {
+                font-size: 10px;
+            }
+        }
+
+        &__prices {
+            padding-right: 0;
+            align-items: flex-end;
+
+            &:first-child {
+                border-right: none;
+            }
+        }
+
+        &__superprice-box {
+            display: none;
+        }
+
+        &__button {
+            font-size: 11px;
+            width: 125px;
+            height: 30px;
+        }
+
+        &__nav {
+            &-box {
+                gap: 4px;
+                margin-right: 0;
+                max-width: 41px;
+
+                &>svg {
+                    max-height: 5px;
+                }
+            }
+        }
+    }
+
+    .menu-cross {
+        margin: 9px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 767px) {}

@@ -1,0 +1,212 @@
+.usable {
+    &:hover {
+        cursor: pointer;
+
+        path {
+            fill: $yellowColor;
+        }
+    }
+
+    &:active {
+        path {
+            fill: $blueColor;
+        }
+    }
+}
+
+.dropdown-menu {
+    &__button-nav {
+        position: relative;
+    }
+
+    &__checkbox {
+        position: absolute;
+        top: -66666px;
+
+        &:checked~.dropdown-menu__nav {
+            display: block;
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+    }
+}
+
+.product {
+    &-card {
+        position: relative;
+        transition: 0.5s;
+
+        &:hover {
+            cursor: pointer;
+            transition: 0.5s;
+            transform: scale(1.1);
+
+            & .product-card__hover {
+                animation: appearance 1s forwards;
+                display: block;
+            }
+        }
+
+        &:not(:hover) .product-card__hover {
+            animation: disappearance 0.7s forwards;
+            display: block;
+        }
+
+        &__hover {
+            position: absolute;
+            // box-sizing: border-box;
+            border-radius: 30px;
+            height: 100%;
+            width: 100%;
+            background: $turquoiseColor;
+            display: none;
+            animation: disappearance 0.7s forwards;
+        }
+
+        &__animation {
+            width: 100%;
+            height: 100%;
+            @extend %flex-center-center;
+            position: relative;
+
+            &-text {
+                position: absolute;
+                animation: rotation-left 6s linear infinite;
+            }
+
+            &-chamomile {
+                position: absolute;
+                animation: rotation-right 7s linear infinite;
+            }
+        }
+
+    }
+}
+
+.main {
+    background: $mainGradient;
+
+    &-top {
+        min-height: 115px;
+        border-bottom: 1.5px solid $grayColor;
+        @extend %flex-center;
+        gap: 55px;
+
+        &__left {
+            @extend %flex-sa-center;
+
+            &-box {
+                min-width: 260px;
+            }
+        }
+
+        &__right {
+            @extend %flex-sb-center;
+            min-width: 823px;
+        }
+
+        &__title {
+            color: $blueColor;
+            @include font(24px, 700);
+            text-wrap: nowrap;
+        }
+
+        &__breadcrumbs {
+            display: flex;
+            gap: 10px;
+
+            & li {
+                @include font(10px, 500);
+                color: $hardGrayColor;
+                text-wrap: nowrap;
+
+                &:last-child {
+                    color: $grayColor;
+                }
+
+                &:not(:last-child) {
+                    border-right: 1px solid $hardGrayColor;
+                    padding-right: 10px;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $blueColor
+                    }
+                }
+            }
+        }
+    }
+}
+
+.side-bar {
+    &__square {
+        min-width: 239px;
+        min-height: 239px;
+        @extend %flex-column-center-center;
+        border-radius: 27px;
+        background-color: $whiteColor;
+    }
+}
+
+.media {
+    &__price {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .product {
+        &-card {
+            &:hover {
+                transition: none;
+                transform: none;
+            }
+
+            &__hover {
+                background: none;
+            }
+        }
+    }
+
+    .media {
+        &__price {
+            width: 100%;
+            min-height: 38px;
+            background-color: $blueColor;
+            display: flex;
+            align-items: center;
+
+            &-link {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 13px;
+                @include font(16px, 700);
+                color: $whiteColor;
+
+                &>svg {
+                    max-height: 23px;
+                    max-width: 16px;
+                }
+            }
+        }
+    }
+
+    .slide-up {
+        &-checkbox {
+            &:checked~nav {
+                animation: menu-slide-up 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+
+            &:not(:checked)~nav {
+                animation: menu-slide-down 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {}

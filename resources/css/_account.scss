@@ -1,0 +1,381 @@
+.account {
+    &-main {
+        min-height: 580px;
+    }
+
+    &-profile {
+        &__card {
+            column-gap: 103px;
+
+            &-line {
+                @extend %flex-top-center;
+
+                &>h6 {
+                    min-width: 135px;
+                }
+
+                &:nth-child(5),
+                &:nth-child(6) {
+                    &>h6 {
+                        min-width: 172px;
+                    }
+                }
+            }
+
+            &-btn {
+                &-box {
+                    padding-top: 33px;
+                }
+            }
+        }
+
+        &__form {
+            &-line {
+                @extend %flex-top-center;
+
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7) {
+                    &>label {
+                        min-width: 150px;
+                    }
+                }
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    &>input {
+                        min-width: 233px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-order {
+        &__card {
+            min-height: 119px;
+            padding: 28px 46px;
+
+            &-content {
+                @extend %flex-sb;
+                min-height: 62px;
+
+                &-side {
+                    @extend %flex-sb;
+                    gap: 60px;
+                }
+
+                &-item {
+                    @extend %flex-column-start-sb;
+                    min-height: inherit;
+
+                    &>p,
+                    &>span {
+                        @include font(16px, 400);
+                    }
+
+                    &>h2 {
+                        @include font(18px, 700);
+                    }
+
+                    &>h3 {
+                        @include font(18px, 500);
+                        color: $blueColor;
+                    }
+
+                    &>span {
+                        border: 0;
+                        border-radius: 11px;
+                        color: $whiteColor;
+                        min-width: 138px;
+                        min-height: 30px;
+                        @extend %flex-center-center;
+                    }
+                }
+
+                &-sum {
+                    min-width: 135px;
+                }
+            }
+
+            &-status {
+                &-yellow {
+                    background-color: $yellowColor;
+                    color: $blackColor !important;
+                }
+
+                &-pink {
+                    background-color: $pinkColor;
+                }
+
+                &-darkblue {
+                    background-color: $darkblueColor;
+                }
+
+                &-blue {
+                    background-color: $blueColor;
+                }
+            }
+        }
+    }
+
+    &-company {
+        &__new {
+            &-box {
+                padding: 36px 48px;
+                min-height: 300px;
+            }
+
+            &-btn {
+                min-width: 38px;
+                min-height: 38px;
+                background-color: $grayColor;
+                @extend %flex-center-center;
+                border-radius: 11px;
+                border: 0;
+                box-sizing: border-box;
+
+                &-box {
+                    @extend %flex-top-center;
+                    gap: 97px;
+                }
+
+                &:hover {
+                    background-color: $blueColor;
+                }
+
+                &:active {
+                    background-color: $darkblueColor;
+                }
+            }
+
+            &-label {
+                @include font(16px, 400);
+            }
+        }
+
+        &__card {
+            // justify-content: space-between;
+            column-gap: 19px;
+            padding-bottom: 54px;
+
+            &-line {
+                display: flex;
+
+                &>h6 {
+                    min-width: 133px;
+                }
+
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    &>h6 {
+                        min-width: 155px;
+                    }
+                }
+
+                &>p {
+                    max-width: 227px;
+                }
+            }
+
+            &-btn {
+                &-box {
+                    margin-bottom: -17px;
+                }
+            }
+        }
+
+        &__form {
+            &-line {
+                @extend %flex-top-center;
+
+                &:nth-child(2) {
+                    align-items: baseline;
+                }
+
+                &>textarea {
+                    min-width: 233px;
+                }
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    &>input {
+                        min-width: 233px;
+                    }
+                }
+
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    &>label {
+                        min-width: 147px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__card {
+        @extend %flex-column;
+        row-gap: 31px;
+        padding: 57px 47px;
+        min-height: 300px;
+        max-height: 300px;
+        flex-wrap: wrap;
+        position: relative;
+
+        &-line {
+            &>h6 {
+                @include font(14px, 400);
+                color: $grayColor;
+            }
+
+            &>p {
+                @include font(16px, 400);
+            }
+        }
+
+        &-btn {
+            position: absolute;
+            right: 66px;
+            bottom: 40px;
+
+            &-box {
+                @extend %flex-end-end;
+            }
+        }
+    }
+
+    &__form {
+        background-color: $darkblueColor;
+        border-radius: inherit;
+        max-height: 300px;
+        padding-left: 47px;
+        padding-bottom: 41px;
+
+        &-lines {
+            @extend %flex-column;
+            row-gap: 9px;
+            column-gap: 21px;
+            flex-wrap: wrap;
+            max-height: 220px;
+            max-width: 133px;
+        }
+
+        &-line {
+            &-title {
+                min-width: 111px;
+                @include font(14px, 400);
+                color: $whiteColor;
+
+            }
+
+            &-value {
+                @include font(14px, 400);
+                color: $whiteColor;
+                background-color: $darkblueColor;
+                min-width: 194px;
+                min-height: 47px;
+                border: 1px solid $whiteColor;
+                border-radius: 11px;
+                padding-left: 24px;
+            }
+
+            &-textarea {
+                min-height: 103px;
+                padding: 11px 23px;
+                box-sizing: border-box;
+                font-family: Roboto sans-serif;
+                resize: none;
+            }
+
+            &-required::after {
+                content: "*";
+                color: $yellowColor;
+            }
+        }
+
+        &-save {
+            &-btn {
+                padding-left: 150px;
+
+                &>input {
+                    &:hover {
+                        background-color: $whiteColor;
+                        color: $blueColor;
+                        border: 2px solid $blueColor;
+                    }
+
+                    &:active {
+                        background-color: $yellowColor;
+                    }
+                }
+            }
+        }
+    }
+
+    &__nav {
+        &-square {
+            padding: 28px 17px;
+        }
+
+        &-ul {
+            @extend %flex-column;
+            gap: 22px;
+            width: 100%;
+        }
+
+        &-li {
+            padding-left: 6px;
+
+            &:last-child {
+                border-top: 1px solid $grayColor;
+                padding-top: 22px;
+            }
+        }
+
+        &-link {
+            @extend %flex-top-center;
+            gap: 16px;
+            color: $blackColor;
+            @include font(16px, 500);
+
+            &>p {
+                @include font(16px, 600);
+            }
+
+            &:hover {
+                color: $yellowColor;
+            }
+
+            &:active {
+                color: $blueColor;
+            }
+
+            &__current {
+                color: $blueColor;
+
+                &>svg>path {
+                    fill: $blueColor;
+                }
+
+                &:hover {
+                    color: $blueColor;
+                    cursor: default;
+                }
+            }
+        }
+
+        &-interface {
+            display: none;
+        }
+    }
+
+    &__page {
+        min-width: 823px;
+    }
+}

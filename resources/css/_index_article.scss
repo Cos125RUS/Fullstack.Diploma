@@ -1,0 +1,123 @@
+.index-services {
+    background: linear-gradient(180.00deg, rgb(225, 230, 230) 51.658%, rgb(118, 119, 119) 162.359%);
+    @extend %flex-center;
+
+    &__content {
+        &-title {
+            color: $blueColor;
+            @include font(24px, 700);
+            margin-bottom: 20px;
+        }
+
+        &-subtitle {
+            @include font(20px, 700);
+            margin-bottom: 30px;
+        }
+
+        &-text {
+            color: $lightGrayColor;
+            @include font(18px, 500);
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__icon:hover {
+        animation: rotation-right 0.5s linear infinite;
+    }
+}
+
+.index-delivery {
+    @include background-img('../img/index_delivery/background.jpeg', 0.7);
+    @extend %flex-center;
+    
+    &__content {
+        &-subtitle {
+            @include font(20px, 700);
+            margin-bottom: 24px;
+            color: $whiteColor;
+        }
+
+        &-text {
+            color: $whiteColor;
+            @include font(18px, 500);
+            opacity: 0.7;
+            margin-bottom: 80px;
+        }
+    }
+
+    &__icon:hover {
+        animation: slide-out-right 0.7s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    }
+}
+
+.index-article {
+    &__box {
+        width: 100%;
+        max-width: 1440px;
+        padding-left: 152px;
+        margin-bottom: 70px;
+        display: flex;
+    }
+
+    &__img {
+        margin-right: 86px;
+        max-height: 390px;
+        max-width: 260px;
+        object-fit: cover;
+    }
+
+    &__content {
+        margin-right: 50px;
+        max-width: 574px;
+        @extend %flex-column-end;
+
+        &-button {
+            width: 194px;
+            height: 48px;
+            border-radius: 11px;
+            background: $whiteColor;
+            border: 0;
+            @include font(14px, 700);
+            box-sizing: border-box;
+            @extend %flex-center-center;
+            color: $blackColor;
+
+            &:hover {
+                cursor: pointer;
+                background: $darkblueColor;
+                color: $whiteColor;
+            }
+
+            &:active {
+                background: $whiteColor;
+                color: $blueColor;
+                border: 1.5px solid $blueColor;
+            }
+        }
+    }
+
+    &__icon {
+        &-box {
+            width: 50px;
+            height: 90px;
+            background-color: $blueColor;
+            border-radius: 0px 0px 11px 11px;
+            @extend %flex-center-end;
+        }
+
+        margin-bottom: 10px;
+
+        &:hover {
+            cursor: pointer;
+
+            & path {
+                fill: $yellowColor;
+            }
+        }
+    }
+    
+    &__img {
+        min-height: 390px;
+    }
+}

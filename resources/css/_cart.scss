@@ -1,0 +1,82 @@
+.cart {
+    &-main {
+        @extend %flex-center;
+
+        &__total {
+            &-square {
+                gap: 20px;
+                max-width: 239px;
+                padding: 10px;
+            }
+
+            &-sum {
+                @extend %flex-center;
+                gap: 8px;
+
+                &>h4 {
+                    color: $hardGrayColor;
+                    @include font(15px, 400);
+                    padding-top: 2px;
+                }
+
+                &>p {
+                    color: $blackColor;
+                    @include font(24px, 700);
+                }
+            }
+
+
+            &-btn {
+                text-transform: uppercase;
+            }
+
+            &-info {
+                text-wrap: wrap;
+                text-align: center;
+                @include font(14px, 400);
+                color: $hardGrayColor;
+            }
+        }
+
+        &__options {
+            &-button {
+                display: none;
+            }
+
+            &-counts {
+                min-height: 127px;
+            }
+        }
+
+        &__del {
+            &-btn {
+                @extend %opacity-background;
+                min-width: 17px;
+                min-height: 17px;
+
+                &:hover {
+                    cursor: pointer;
+
+                    &>svg {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+
+            &-cross {
+                min-width: inherit;
+                min-height: inherit;
+
+                &>path {
+                    fill: $grayColor;
+                }
+            }
+        }
+
+        &__item {
+            &-title {
+                @extend %flex-sb;
+            }
+        }
+    }
+}

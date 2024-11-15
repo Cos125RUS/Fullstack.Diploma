@@ -1,0 +1,184 @@
+@media (max-width: 1024px) {
+    .account {
+        &-main {
+            justify-content: start;
+        }
+
+        &__nav {
+            min-width: 308px;
+
+            &-square {
+                box-shadow: none;
+                min-width: 100vw;
+                min-height: 0;
+                border-radius: 0;
+                background-color: transparent;
+            }
+
+            &-interface {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &-header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 31px;
+                padding-left: 47px;
+                min-height: 30px;
+
+                &>svg {
+                    min-width: 30px;
+
+                    &>path {
+                        fill: $blueColor;
+                    }
+                }
+            }
+
+            &-title {
+                @include font(16px, 700);
+                color: $blueColor;
+            }
+
+            &-back-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 24px;
+                min-height: 65px;
+                max-width: 285px;
+                border-radius: 28px;
+                margin-left: 12px;
+
+                &>p {
+                    color: $blueColor;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+            }
+
+            &-ul {
+                &__hidden {
+                    display: none;
+                }
+            }
+
+            &-li {
+                padding-left: 51px;
+            }
+        }
+
+        &__page {
+            min-width: 100vw;
+        }
+
+        &__card {
+            max-height: 100%;
+            padding: 43px 0 42px 53px;
+            flex-wrap: nowrap;
+
+            &-line {
+                max-width: 180px;
+
+                &>h6 {
+                    display: none;
+                }
+            }
+
+            &-btn {
+                position: static;
+                max-width: 194px;
+                margin-left: -7px;
+                background-color: $blueColor;
+                color: $whiteColor;
+            }
+        }
+
+        &__form {
+            padding: 47px 45px 33px;
+            max-height: 100%;
+            position: relative;
+
+            &-lines {
+                flex-wrap: nowrap;
+                max-height: inherit;
+            }
+
+            &-line {
+                &>label {
+                    display: none;
+                }
+
+                &-value {
+                    min-width: 194px !important;
+                }
+            }
+
+            &-save-btn {
+                padding-left: 0;
+            }
+        }
+
+        &-company {
+            &__new {
+                &-btn {
+                    min-width: 70px;
+                    min-height: 70px;
+                    background-color: $blueColor;
+
+                    &-box {
+                        gap: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 285px;
+                    }
+                }
+
+                &-label {
+                    display: none;
+                }
+            }
+        }
+
+        &-order {
+            &__card {
+                &-content {
+                    flex-direction: column;
+                    gap: 37px;
+
+                    &-side {
+                        flex-direction: column;
+                        gap: 37px;
+
+                        &:last-child {
+                            &>div {
+                                &>p {
+                                    display: none;
+                                }
+
+                                &>span {
+                                    display: inline;
+                                    padding: 5px 18px;
+                                    margin-left: -18px;
+                                }
+                            }
+                        }
+                    }
+
+                    &-item {
+                        display: inline;
+
+                        &:first-child {
+                            &>h3 {
+                                margin-bottom: 37px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

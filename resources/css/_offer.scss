@@ -1,0 +1,40 @@
+.offer {
+    min-height: 471px;
+    background: linear-gradient(180.00deg, rgb(225, 230, 230) 51.659%, rgb(118, 119, 119) 162.471%);
+
+    &__title {
+        @include font(24px, 700);
+        color: $blueColor;
+        text-align: center;
+        padding-top: 59px;
+        margin-bottom: 46px;
+    }
+
+    &__promotions {
+        @extend %flex-center-center;
+        gap: 54px;
+    }
+
+    &__promotion {
+        min-width: 239px;
+        min-height: 239px;
+        background-color: $whiteColor;
+        border: 0;
+        border-radius: 30px;
+        box-sizing: border-box;
+        @extend %flex-column-center-end;
+
+        &-img {
+            position: absolute;
+            top: -10px;
+        }
+
+        &-name {
+            @include font(18px, 500);
+            color: $blueColor;
+            max-width: 180px;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+    }
+}

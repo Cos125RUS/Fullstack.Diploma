@@ -1,0 +1,306 @@
+.header {
+    @include background-img('../img/header/header-background-big.jpeg', 0.7);
+    @extend %flex-column-center;
+    justify-content: space-between;
+    min-height: 138px;
+
+    &__top {
+        max-width: 1440px;
+        z-index: 1;
+        width: 100%;
+
+        &-nav {
+            padding-top: 27px;
+            width: 100%;
+            @extend %flex-sa-center;
+        }
+    }
+
+    &__logo {
+        // margin-right: 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__sections {
+        display: flex;
+        // margin-right: 72px;
+        cursor: pointer;
+
+        &-link {
+            color: $grayColor;
+            @include font(16px, 400);
+            min-width: 120px;
+            min-height: 63px;
+            @extend %flex-center-center;
+
+            &:not(:last-child) {
+                border-right: 1.5px solid $whiteColor;
+            }
+        }
+    }
+
+    // &__user-interface {
+    //     // margin-right: 48px;
+    // }
+
+    &__icons {
+        display: flex;
+        gap: 17px;
+    }
+
+    &__cart {
+        // margin-right: 35px;
+        position: relative;
+
+        &-background {
+            border-radius: 0px 0px 11px 11px;
+            background: $blueColor;
+            position: absolute;
+            height: 90px;
+            width: 50px;
+            z-index: 0;
+            top: -43px;
+            z-index: -1;
+        }
+
+        &-icon {
+            margin: 10px;
+        }
+
+        &::after {
+            content: '';
+            display: none;
+            color: $blueColor;
+            @include font(16px, 700);
+            position: absolute;
+            min-width: 30px;
+            min-height: 30px;
+            box-sizing: border-box;
+            border-radius: 11px 11px 11px 5px;
+            background: $yellowColor;
+            @extend %flex-center-center;
+            top: -26px;
+            left: 12px;
+        }
+    }
+
+    &__menu {
+        display: none;
+    }
+
+    &__info {
+        white-space: nowrap;
+
+        &-phone {
+            color: $whiteColor;
+            @include font(18px, 500);
+        }
+
+        &-working {
+            color: $whiteColor;
+            @include font(14px, 400);
+        }
+    }
+
+    &__middle {
+        width: 100vw;
+        @extend %flex-center;
+    }
+}
+
+.index-header {
+    min-height: 559px;
+    border-bottom: 10px solid $blueColor;
+}
+
+.search {
+    &-box {
+        border-bottom: 1px solid $whiteColor;
+        @extend %flex-sb-center;
+        gap: 5px;
+        min-width: 197px;
+    }
+
+    &-input {
+        background-color: transparent;
+        border: 0px;
+        color: $whiteColor;
+
+        &::placeholder {
+            color: $whiteColor;
+            @include font(14px, 400);
+        }
+
+        &:focus {
+            outline-width: 0;
+            color: $whiteColor;
+        }
+    }
+
+    &-cross {
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2)
+        }
+
+        &__open {
+            display: block;
+        }
+
+        &__close {
+            display: none;
+        }
+    }
+
+    &-dropdown {
+        @include create-dropdown($blackColor, $whiteColor, $grayColor, 40px, 0);
+    }
+
+    &-info {
+        &__nav {
+            min-width: 197px;
+        }
+    }
+}
+
+.hover-big:hover {
+    transition: all 0.5s;
+    color: $whiteColor;
+    @include font(16px, 700);
+}
+
+.sales {
+    &-dropdown {
+        @include create-dropdown($whiteColor, $darkblueColor, rgba(62, 122, 191, 0.7), 56px, 10px);
+    }
+}
+
+.banner {
+    &__info {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        max-width: 1440px;
+        gap: 167px;
+        margin-bottom: 10px;
+    }
+
+    &__left {
+        height: 100%;
+    }
+
+    &__picture {
+        @extend %flex-center;
+        align-items: end;
+    }
+
+    &__right {
+        min-width: 453px;
+        color: $whiteColor;
+        @extend %flex-column-end-end;
+
+        &-bottom {
+            margin-bottom: 47px;
+            @extend %flex-sb;
+            min-width: 100%;
+        }
+    }
+
+    &__title {
+        @include font(29px, 400);
+        margin-bottom: 40px;
+        min-width: 100%;
+
+        &-name {
+            font-size: 40px;
+        }
+    }
+
+    &__description {
+        @include font(16px, 400);
+        margin-bottom: 33px;
+        min-width: 100%;
+    }
+
+    &__price {
+        &-box {
+            display: flex;
+            padding-right: 16px;
+        }
+
+        &-old {
+            text-decoration: line-through;
+            @include font(14px, 400);
+        }
+
+        &-new {
+            @include font(18px, 700);
+        }
+    }
+
+    &__prices {
+        padding-right: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        &:first-child {
+            border-right: 2px solid $whiteColor;
+        }
+    }
+
+    &__superprice {
+        display: flex;
+        justify-content: end;
+
+        &-box {
+            padding-left: 24px;
+            display: flex;
+            align-items: end;
+        }
+    }
+
+    &__button {
+        @include font(14px, 700);
+        color: $whiteColor;
+        background-color: $blueColor;
+        width: 194px;
+        height: 48px;
+        @extend %flex-center-center;
+        border: 0;
+        border-radius: 11px;
+
+        &:hover {
+            background-color: $darkblueColor;
+            cursor: pointer;
+        }
+
+        &:active {
+            color: $blueColor;
+            background-color: $whiteColor;
+            border: 1.5px solid $blueColor;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 18px;
+
+        &-box {
+            display: flex;
+            gap: 7px;
+            margin-right: 15px;
+        }
+
+        &-dot:hover {
+            cursor: pointer;
+        }
+    }
+}

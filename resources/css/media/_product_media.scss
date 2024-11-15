@@ -1,0 +1,97 @@
+@media (max-width: 1024px) {
+    .product {
+        &-top {
+            flex-direction: column;
+            gap: 0;
+
+            &__left,
+            &__right {
+                display: none;
+            }
+
+            &__catalog {
+                display: block;
+
+                & > label {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &-main {
+            &__box {
+                margin-top: 13px;
+                padding-top: 0;
+                margin-bottom: 48px;
+                min-width: 284px;
+            }
+
+            &__top {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & > img {
+                    max-width: 142px;
+                }
+
+                & > h2 {
+                    color: $blueColor;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+
+            &__options {
+                min-width: 284px;
+                padding-left: 0;
+                flex-direction: column;
+                border-top: 0;
+
+                &-selectors {
+                    min-height: 0;
+                }
+
+                &-counts {
+                    min-height: 0;
+                }
+
+                &-button {
+                    min-height: 30px;
+                }
+            }
+
+
+            &__info {
+                margin: 26px 0 53px;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+            }
+
+            &__description {
+                max-width: 232px;
+
+                &-title {
+                    padding-bottom: 7px;
+                }
+
+                &-text {
+                    font-size: 12px;
+                }
+            }
+
+            &__specifications {
+                min-width: 232px;
+
+                &-box {
+                    &:first-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {}

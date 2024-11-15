@@ -1,0 +1,81 @@
+.index-catalog {
+    @extend %flex-center;
+    border-bottom: 1.5px solid $grayColor;
+    background: linear-gradient(0.00deg, rgb(249, 249, 249) 51.616%, rgb(213, 217, 217) 198.516%);
+    position: relative;
+
+    &__box {
+        @extend %flex-column-center-center;
+        max-width: 1440px;
+    }
+
+    &__title {
+        margin-top: 58px;
+        color: $blueColor;
+        @include font(24px, 700);
+    }
+
+    &__cards {
+        margin: 53px 80px 78px;
+        @extend %flex-center;
+        flex-wrap: wrap;
+        gap: 54px;
+    }
+
+    &__card {
+        min-width: 242px;
+        min-height: 270px;
+
+        &-box {
+            @extend %flex-column-center-end;
+            background-color: $whiteColor;
+            box-sizing: border-box;
+            border: 1px solid $whiteColor;
+            border-radius: 30px;
+            height: 100%;
+            width: 100%;
+        }
+
+        &-img {
+            padding: 17px 10px 0px;
+            max-width: 240px;
+        }
+
+        &-name {
+            color: $blackColor;
+            @include font(18px, 500);
+            padding-bottom: 33px;
+        }
+    }
+
+    &__tape {
+        position: absolute;
+        min-width: 50px;
+        min-height: 90px;
+        background-color: $blueColor;
+        border-radius: 0 0 11px 11px;
+        margin-left: 900px;
+        padding-bottom: 10px;
+        @extend %flex-center-end;
+
+        &-link {
+            @extend %flex-column-center-end;
+            gap: 10px;
+
+            &:hover {
+                & p {
+                    color: $yellowColor;
+                }
+
+                & svg path {
+                    fill: $yellowColor;
+                }
+            }
+        }
+
+        &-text {
+            @include font(14px, 700);
+            color: $whiteColor;
+        }
+    }
+}

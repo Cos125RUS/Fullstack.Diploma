@@ -1,0 +1,24 @@
+@media (max-width:1024px) {
+    .cart {
+        &-main {
+            &__total {
+                &-box {
+                    margin: 29px 0 23px;
+                }
+
+                &-btn {
+                    min-width: 194px;
+                    min-height: 46px;
+                    background-color: $blueColor;
+                    color: $whiteColor;
+                }
+            }
+
+            &__del-btn {
+                position: absolute;
+                top: -80px;
+                right: 0;
+            }
+        }
+    }
+}

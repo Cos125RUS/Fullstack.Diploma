@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    font-family: Roboto, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    min-width: 100vw;
+}

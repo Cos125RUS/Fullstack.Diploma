@@ -1,0 +1,542 @@
+.modal {
+    &-background {
+        position: fixed;
+        z-index: 9;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $darkblueColor;
+        opacity: 0.3;
+    }
+
+    &-container {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        width: 100vw;
+        @extend %flex-center;
+        overflow: hidden;
+        min-width: 100vw;
+        min-height: 100vh;
+    }
+
+    &-box {
+        position: fixed;
+        background-color: $whiteColor;
+        border-radius: 27px;
+        @extend %flex-column;
+        min-width: 285px;
+        margin-top: 156px;
+        padding-bottom: 35px;
+    }
+
+    &-product {
+
+        &__top,
+        &__bottom {
+            @extend %flex-column-center;
+        }
+
+        &__top {
+            padding-bottom: 15px;
+            border-bottom: 1.5px solid $grayColor;
+        }
+
+        &__bottom {
+            padding: 13px 29px 18px 39px;
+            width: 100%;
+            gap: 21px;
+        }
+
+        &__specifications,
+        &__total {
+            width: 100%;
+            @extend %flex-sb;
+        }
+
+        &__specification {
+            &>h3 {
+                @include font(14px, 400);
+                padding-bottom: 7px;
+            }
+
+            &>p {
+                @include font(11px, 400);
+                color: $blueColor;
+            }
+
+            &:last-child {
+                text-align: end;
+            }
+        }
+
+        &__total {
+            &-sum {
+                @include font(14px, 700);
+            }
+
+            &-counts {
+                @include font(11px, 400);
+                color: $blueColor;
+            }
+        }
+
+        &__button {
+            &-box {
+                @extend %flex-center;
+                padding-bottom: 28px;
+            }
+        }
+    }
+
+    &-confirm {
+        &__form {
+            margin-left: 24px;
+            margin-right: 24px;
+
+            &-element {
+                position: relative;
+            }
+
+            &-bd {
+                border-left: 1.5px solid $blueColor;
+            }
+
+            &-title {
+                padding-left: 31px;
+                padding-bottom: 15px;
+                @include font(16px, 700);
+
+                &-last {
+                    padding-bottom: 0;
+                }
+            }
+
+            &-options {
+                padding-left: 31px;
+                display: flex;
+                gap: 9px;
+                padding-bottom: 36px;
+
+                &__last {
+                    margin-top: 19px;
+                }
+            }
+
+            &-option {
+                &-btn {
+                    min-width: 111px;
+                    min-height: 46px;
+
+                    &__blue {
+                        background-color: $blueColor;
+                        color: $whiteColor;
+                        cursor: default !important;
+                    }
+
+                    &__grey {
+                        color: $whiteColor;
+                        background: $grayColor;
+
+                        &:hover {
+                            background-color: $darkblueColor;
+                        }
+
+                        &:active {
+                            background-color: $whiteColor;
+                            border: 1.5px solid $darkblueColor;
+                            color: $darkblueColor;
+                        }
+                    }
+                }
+
+                &-radio {
+                    position: absolute;
+                    top: 666666px;
+                }
+            }
+
+            &-select {
+                &-box {
+                    padding-left: 31px;
+                    position: relative;
+                    padding-bottom: 32px;
+                }
+            }
+
+            &-details {
+                padding-left: 0 !important;
+
+                &-item {
+                    background-color: $grayColor;
+
+                    &:hover {
+                        background-color: $lightGrayColor;
+                    }
+
+                    &:last-child {
+                        border-bottom-left-radius: 11px;
+                        border-bottom-right-radius: 11px;
+                    }
+
+                    &>label {
+                        padding-left: 12px;
+
+                        &>input {
+                            position: absolute;
+                            top: 666666px;
+                        }
+                    }
+                }
+            }
+
+            &-summary {
+                list-style: none;
+                justify-content: start !important;
+
+                &::-webkit-details-marker {
+                    display: none;
+                }
+
+                &__open {
+                    border-bottom-left-radius: 0 !important;
+                    border-bottom-right-radius: 0 !important;
+                }
+            }
+
+            &-input {
+                min-width: 194px;
+                min-height: 47px;
+                @extend %flex-center-center;
+                padding-left: 26px;
+                @include font(14px, 400);
+                border-radius: 11px;
+                border: 1px solid $grayColor;
+
+                &-btn {
+                    position: absolute;
+                    left: 205px;
+                    top: 19px;
+
+                    &:hover {
+                        top: 17px;
+                        left: 203px;
+
+                        &>svg {
+                            min-width: 14px;
+                            min-height: 14px;
+
+                            &>path {
+                                fill: $blueColor;
+                            }
+                        }
+                    }
+
+                    &>svg>path {
+                        fill: $grayColor;
+                    }
+                }
+            }
+
+            &-btn {
+                &-box {
+                    display: flex;
+                    padding-left: 31px;
+                }
+
+                &__inactive {
+                    display: none;
+                }
+            }
+
+            &-ball {
+                position: absolute;
+                left: -12px;
+
+                &-inactive>circle {
+                    fill: $grayColor;
+                }
+            }
+        }
+    }
+
+    &-success {
+        &__user-logo {
+            min-width: 57px;
+            min-height: 57px;
+            border: 5px solid $darkblueColor;
+            border-radius: 50%;
+            @extend %flex-center-center;
+            color: $blueColor;
+            @include font(39px, 700);
+        }
+
+        &__content {
+            max-width: 225px;
+            @extend %flex-column-start-sb;
+            gap: 25px;
+            margin: 0 30px;
+            padding: 0 10px;
+
+            &>p {
+                text-align: center;
+            }
+
+            &-top {
+                @include font(12px, 400);
+            }
+
+            &-number {
+                @include font(14px, 700);
+            }
+
+            &-link {
+                @include font(14px, 700);
+                color: $blueColor;
+                text-decoration: underline;
+
+                &:hover {
+                    color: $yellowColor;
+                }
+            }
+
+            &-bottom {
+                @include font(14px, 400);
+            }
+        }
+
+        &__info {
+            @extend %flex-column-center;
+            margin-bottom: 27px;
+
+            &-title {
+                max-width: 160px;
+                @include font(18px, 500);
+                text-align: center;
+
+                &-big {
+                    max-width: 192px;
+                }
+            }
+
+            &-email {
+                @include font(18px, 500);
+                color: $blueColor;
+            }
+
+            &-note {
+                @include font(12px, 400);
+                text-align: center;
+            }
+        }
+    }
+
+    &-close {
+        width: 100%;
+        padding-right: 20px;
+        padding-top: 20px;
+        @extend %flex-end;
+
+        &__btn {
+            @extend %opacity-background;
+        }
+
+        &__cross {
+            min-height: 17px;
+            min-width: 17px;
+
+            &>path {
+                fill: $blueColor;
+            }
+        }
+    }
+
+    &__title {
+        @include font(16px, 500);
+        margin-top: 12px;
+        margin-bottom: 20px;
+        text-align: center;
+
+        &__product {
+            margin-bottom: 3px;
+        }
+    }
+
+    &__img {
+        max-width: 142px;
+        max-height: 107px;
+    }
+
+    &__product-name {
+        @include font(18px, 500);
+        color: $blueColor;
+    }
+
+    &__char {
+        &-box {
+            @extend %flex-center;
+        }
+    }
+
+    &__form {
+        @extend %flex-column-center;
+        position: relative;
+    }
+
+    &__footer {
+        &-box {
+            @extend %flex-center;
+            gap: 14px;
+        }
+
+        &-title {
+            @include font(12px, 400);
+            @extend %flex-center-end;
+            gap: 5px;
+        }
+
+        &-remark {
+            max-width: 178px;
+            text-align: center;
+            @include font(7px, 400);
+
+            &-box {
+                padding-top: 8px;
+                @extend %flex-center;
+            }
+        }
+    }
+
+    &__input {
+        margin-bottom: 9px;
+        min-width: 194px;
+        min-height: 47px;
+        padding-left: 26px;
+        border: 1px solid $grayColor;
+        border-radius: 11px;
+
+        &:focus {
+            outline: none;
+            border: 2px solid $blueColor;
+        }
+
+        &__fail {
+            border: 2px solid $redColor;
+
+            &:not(:focus) {
+                color: $redColor !important;
+            }
+        }
+    }
+
+    &__password {
+        &-box {
+            position: relative;
+        }
+
+        &-button {
+            position: absolute;
+            top: 15px;
+            right: 12px;
+            @extend %opacity-background;
+        }
+
+        &-eye {
+            &:hover>path {
+                fill: $blueColor;
+            }
+
+            &:active>path {
+                fill: $yellowColor;
+            }
+        }
+    }
+
+    &__warning {
+        position: absolute;
+        background-color: $redColor;
+        @extend %flex-center-center;
+        gap: 5px;
+        min-height: 30px;
+        padding: 6px 8px;
+        border: 0;
+        border-radius: 11px 11px 11px 5px;
+
+        &>p {
+            @include font(16px, 700);
+            color: $whiteColor;
+        }
+    }
+
+    &-info {
+        &__box {
+            position: fixed;
+            background-color: $whiteColor;
+            border-radius: 27px;
+            @extend %flex-column-center;
+            min-width: 1117px;
+            margin-top: 2%;
+            padding-bottom: 50px;
+        }
+
+        &__cross {
+            right: 32px;
+            top: 32px;
+        }
+
+        &__title {
+            @extend %flex-center-center;
+            gap: 22px;
+            color: $blueColor;
+            margin-bottom: 46px;
+
+            &-logo {
+                border: 2px solid $blueColor;
+                min-width: 43px;
+                min-height: 43px;
+                @extend %flex-center-center;
+                border-radius: 11px;
+            }
+
+            &-text {
+                @include font(16px, 700);
+            }
+        }
+
+        &__pictures {
+            @extend %flex-center-center;
+            flex-wrap: wrap;
+            gap: 17px;
+            margin-bottom: 43px;
+            max-width: 100%;
+            padding: 0 40px;
+        }
+
+        &__text {
+            @extend %flex-column;
+            gap: 15px;
+            max-width: 912px;
+
+            &>h3 {
+                @include font(14px, 700);
+                margin-bottom: 25px;
+            }
+
+            &>p {
+                @include font(14px, 400);
+                text-indent: 12px;
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: 20px;
+
+        &-btn {
+            cursor: pointer;
+            color: $blueColor;
+            @include font(12px, 400);
+            @extend %opacity-background;
+        }
+    }
+}

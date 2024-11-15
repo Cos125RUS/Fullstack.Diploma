@@ -1,0 +1,194 @@
+.btn {
+    @extend %flex-center-center;
+    @include font(14px, 700);
+    text-transform: uppercase;
+    border-radius: 11px;
+    border: 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        white-space: nowrap;
+        box-sizing: border-box;
+    }
+
+    &-big {
+        min-width: 194px;
+        min-height: 48px;
+    }
+
+    &-small {
+        min-width: 186px;
+        min-height: 30px;
+    }
+
+    &-slim {
+        min-width: 139px;
+        min-height: 48px;
+    }
+
+    &-blue {
+        background-color: $blueColor;
+        color: $whiteColor;
+
+        &:hover {
+            background-color: $darkblueColor;
+        }
+
+        &:active {
+            color: $blueColor;
+            background-color: $whiteColor;
+            border: 1.5px solid $blueColor;
+        }
+
+        &-inactive {
+            cursor: default !important;
+
+            :hover {
+                cursor: default !important;
+                background-color: $blueColor !important;
+            }
+
+            &:active {
+                color: $whiteColor !important;
+                background-color: $blueColor !important;
+                border: 0 !important;
+            }
+        }
+    }
+
+    &-grey {
+        background: $grayColor;
+
+        &:hover {
+            background-color: $blueColor;
+            color: $whiteColor;
+        }
+
+        &:active {
+            background-color: $whiteColor;
+            border: 1.5px solid $darkblueColor;
+        }
+    }
+
+    &-cross {
+        &__box {
+            width: 100%;
+            @extend %flex-end;
+        }
+
+        padding-right: 26px;
+        padding-top: 26px;
+
+        &>svg {
+            min-height: 17px;
+            min-width: 17px;
+        }
+
+        &__white {
+            &>path {
+                fill: $whiteColor;
+            }
+        }
+    }
+}
+
+.card {
+    &-list {
+        @extend %flex-column;
+        gap: 22px;
+    }
+
+    &-wide {
+        min-width: 823px;
+        min-height: 239px;
+        background: $whiteColor;
+        box-sizing: border-box;
+        border: 1px solid $whiteColor;
+        border-radius: 28px;
+        box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.25);
+    }
+}
+
+.loader {
+    &-box {
+        @extend %flex-center-center;
+    }
+
+    &-btn {
+        max-height: 48px;
+        max-width: 48px;
+        position: static;
+
+        &>path {
+            fill: $blueColor;
+        }
+    }
+
+    &-icon {
+        max-height: 30px;
+        max-width: 30px;
+        position: static;
+
+        &>path {
+            fill: $blueColor;
+        }
+    }
+}
+
+.auth-user {
+    &__circle {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        @extend %flex-center-center;
+
+        &__yellow {
+            border: 2px solid $yellowColor;
+        }
+
+        &__blue {
+            border: 2px solid $blueColor;
+        }
+    }
+
+    &__char {
+        @include font(18px, 700);
+
+        &__yellow {
+            color: $yellowColor;
+        }
+
+        &__blue {
+            color: $blueColor;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .card {
+        &-wide {
+            max-width: 285px;
+            min-width: 285px;
+        }
+
+        &-list {
+            align-items: center;
+        }
+    }
+
+    .btn {
+        &-cross {
+            padding: 0;
+
+            &__box {
+                position: absolute;
+                width: 17px;
+                top: 25px;
+                right: 25px;
+            }
+        }
+    }
+}

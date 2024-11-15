@@ -1,0 +1,168 @@
+.footer {
+    min-width: 100vw;
+
+    @extend %flex-column-center-center;
+
+    &__box {
+        max-width: 1440px;
+        min-height: 365px;
+        padding: 62px 0 62px;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    &__card {
+        &-box {
+            display: flex;
+        }
+
+        &-title {
+            @include font(14px, 700);
+            padding-top: 28px;
+            padding-bottom: 15px;
+            border-bottom: 1.5px solid $grayColor;
+            margin-bottom: 52px;
+            color: $darkblueColor;
+        }
+    }
+
+    &__logo {
+        &-box {
+            min-width: 304px;
+            @extend %flex-column;
+            gap: 96px;
+            // margin-right: 95px;
+        }
+
+        &-top {
+            display: flex;
+            justify-content: start;
+        }
+
+        &-link:hover svg path {
+            fill: $blueColor;
+        }
+
+        &-bottom {
+            display: flex;
+            justify-content: end;
+        }
+
+        &-confidentiality {
+            max-width: 199px;
+            @include font(10px, 400);
+            color: $darkblueColor;
+
+            & span {
+                text-decoration-line: underline;
+            }
+        }
+    }
+
+    &__company {
+        // &-box {
+        //     // margin-right: 153px;
+        // }
+
+        &-content {
+            @extend %flex-column;
+            gap: 30px;
+        }
+
+        &-link {
+            @include font(14px, 700);
+            color: $darkblueColor;
+            text-wrap: nowrap;
+
+            &:hover {
+                color: $blueColor;
+            }
+        }
+    }
+
+    &__address {
+        // &-box {
+        //     // margin-right: 116px;
+        // }
+
+        &-list {
+            margin-bottom: 26px;
+            @extend %flex-column;
+            gap: 5px;
+        }
+
+        &-item {
+            @include font(16px, 500);
+            text-wrap: nowrap;
+            color: $darkblueColor;
+        }
+
+        &-links {
+            @extend %flex-column;
+            gap: 24px;
+        }
+
+        &-link {
+            display: flex;
+            gap: 17px;
+
+            & p {
+                @include font(14px, 700);
+                text-wrap: nowrap;
+                color: $darkblueColor;
+            }
+
+            &:hover {
+                & p {
+                    color: $blueColor;
+                }
+                & svg path {
+                    fill: $blueColor;
+                }
+            }
+        }
+    }
+
+    &__phones {
+        &-list {
+            @extend %flex-column;
+            gap: 5px;
+            margin-bottom: 43px;
+        }
+
+        &-item {
+            @include font(16px, 500);
+            text-wrap: nowrap;
+            color: $darkblueColor;
+        }
+
+        &-button {
+            @include font(14px, 700);
+            border-radius: 11px;
+            background: $grayColor;
+            border: 0;
+            box-sizing: border-box;
+            width: 194px;
+            height: 48px;
+
+            &:hover {
+                cursor: pointer;
+                color: $whiteColor;
+                background-color: $blueColor;
+            }
+
+            &:active {
+                color: $blueColor;
+                background-color: $whiteColor;
+                border: 1.5px solid $blueColor;
+            }
+        }
+    }
+
+    &__bottom-line {
+        width: 100vw;
+        height: 72px;
+        background-color: $darkblueColor;
+    }
+}

@@ -1,0 +1,72 @@
+.index-about-us {
+    @extend %flex-center;
+
+    &__box {
+        display: flex;
+        gap: 29px;
+        padding: 69px 162px 148px;
+        max-width: 1440px;
+        width: 100%;
+    }
+
+    &__nav {
+        &-box {
+            margin-left: 12px;
+            padding: 26px 48px 17px;
+            border-left: 1px solid $grayColor;
+            flex-basis: 321px;
+        }
+
+        &-ul {
+            @extend %flex-column;
+            gap: 80px;
+        }
+
+        &-li {
+            position: relative;
+        }
+
+        &-circle {
+            display: none;
+            position: absolute;
+            left: -60px;
+        }
+
+        &-link {
+            color: $grayColor;
+            @include font(14px, 700);
+            white-space: nowrap;
+
+            &:hover {
+                color: $blueColor;
+            }
+        }
+    }
+
+    &__info {
+        &-box {
+            flex-grow: 2;
+            flex-basis: 321px;
+            max-width: 642px;
+        }
+        
+        &-title {
+            margin-top: 19px;
+            margin-bottom: 28px;
+            @include font(20px, 700);
+        }
+
+        &-content {
+            color: $lightGrayColor;
+            @include font(18px, 500);
+        }
+    }
+}
+
+
+
+.active {
+    &__circle {
+        display: block;
+    }
+}
